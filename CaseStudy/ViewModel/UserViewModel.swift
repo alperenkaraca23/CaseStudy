@@ -45,12 +45,4 @@ struct UserViewModel {
         user.email
     }
     
-    var phone : String {
-        user.phone
-    }
-    
-    var website : String {
-        user.website
-    }
-    
 }
