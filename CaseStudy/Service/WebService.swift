@@ -7,8 +7,10 @@
 
 import Foundation
 
+//WebService
 class Webservice {
     
+    //User Download Function(API Call)
     func download(_ resource : String) async throws -> [User] {
         guard let url  = URL(string: resource) else {
             throw ServiceError.invalidURL
@@ -23,6 +25,7 @@ class Webservice {
     
 }
 
+//Error Enum For Easy Debugging
 enum ServiceError : Error {
     case invalidURL
     case invalidResponse

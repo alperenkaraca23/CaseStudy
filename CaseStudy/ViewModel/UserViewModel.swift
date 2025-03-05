@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+//Must be Published and ObservableObject for ContentView Updates
 class UserListViewModel : ObservableObject {
     
     @Published var userList = [UserViewModel]()
@@ -15,7 +15,9 @@ class UserListViewModel : ObservableObject {
     
     func downloadUsers() async {
         do{
+            //URL
             let users = try await webservice.download("https://jsonplaceholder.typicode.com/users")
+            //DispatchQueue for thread issues
             DispatchQueue.main.async {
                 self.userList = users.map(UserViewModel.init)
             }

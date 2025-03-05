@@ -17,6 +17,7 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView{
+            //List
             List(userListViewModel.userList,id: \.id) { user in
                 NavigationLink(destination: DetailView(name: user.name, email: user.email, phone: user.phone, website: user.website)) {
                     VStack{
