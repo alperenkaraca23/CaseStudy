@@ -18,18 +18,22 @@ struct ContentView: View {
     var body: some View {
         NavigationView{
             List(userListViewModel.userList,id: \.id) { user in
-                VStack{
-                    Text(user.name)
-                        .font(.title2)
-                        .bold()
-                        .foregroundStyle(.yellow)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    Text(user.email)
-                        .bold()
-                        .foregroundStyle(.gray)
-                        .frame(maxWidth: .infinity , alignment: .leading)
+                NavigationLink(destination: DetailView(name: user.name, email: user.email, phone: user.phone, website: user.website)) {
+                    VStack{
+                        Text(user.name)
+                            .font(.title2)
+                            .bold()
+                            .foregroundStyle(.yellow)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        Text(user.email)
+                            .bold()
+                            .foregroundStyle(.gray)
+                            .frame(maxWidth: .infinity , alignment: .leading)
+                    }
                 }
-            }.task{
+
+            }.navigationTitle("Contacts")
+            .task{
                 await userListViewModel.downloadUsers()
             }
         }
