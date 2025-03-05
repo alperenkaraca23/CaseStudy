@@ -35,6 +35,16 @@ UserFetcherApp is a SwiftUI-based application that fetches and displays a list o
 
 5. **DetailView**
    - Built a basic detail screen to display more information about a selected user.
+
+## Installation
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/alperenkaraca23/CaseStudy.git
+
+2.Open the project in Xcode.
+
+3.Run the project on a simulator or a physical device.
 ```
 ## Video Demo
 
